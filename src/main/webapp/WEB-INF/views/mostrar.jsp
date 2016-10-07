@@ -7,12 +7,13 @@
     <style>
         .error { color: red; }
     </style>
+    <script src="js/jquery-3.1.1.min.js" type="application/javascript" rel="script"></script>
 </head>
 <body>
 <a href="<c:url value="hello.htm"/>">Home</a><br/>
 <a href="<c:url value="listado.htm"/>">Volver al Listado</a><br/>
 
-<h1><fmt:message key="showproduct.heading"/></h1>
+<h1><fmt:message key="showproduct.heading"/> ${product.id}</h1>
 <form:form method="post"
            commandName="product">
     <table >
@@ -38,8 +39,13 @@
         </tr>
     </table>
     <br>
-    <input type="submit" disabled="disabled" value="Save">
+    <!--input id="submit" type="submit" disabled="disabled" value="Save"-->
 </form:form>
+<script type="application/javascript">
+    $(document).ready(function(){
+        //$("#submit").removeAttr("disabled");
+    });
 
+</script>
 </body>
 </html>
