@@ -38,7 +38,7 @@
         </tr>
     </table>
     <br>
-    <input type="submit" value="Save">
+    <input type="submit" disabled="disabled" value="Save">
 </form:form>
 
 </body>
