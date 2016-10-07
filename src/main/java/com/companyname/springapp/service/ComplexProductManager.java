@@ -30,6 +30,10 @@ public class ComplexProductManager implements ProductManager {
         productDao.addProduct(product);
     }
 
+    public void removeProductById(Integer id) {
+        productDao.removeProductByiD(id);
+    }
+
     public void increasePrice(int percentage) {
         List<Product> products = productDao.getProductList();
     	if (products != null) {

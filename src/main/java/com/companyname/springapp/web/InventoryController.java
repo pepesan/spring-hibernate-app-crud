@@ -13,6 +13,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -38,6 +39,12 @@ public class InventoryController {
         myModel.put("products", this.productManager.getProducts());
 
         return new ModelAndView("listado", "model", myModel);
+    }
+    @RequestMapping(value="delete-{id}.htm")
+    public ModelAndView borraProducto(
+            @PathVariable("id") Integer id){
+        productManager.removeProductById(id);
+        return new ModelAndView("redirect:/listado.htm");
     }
 
 

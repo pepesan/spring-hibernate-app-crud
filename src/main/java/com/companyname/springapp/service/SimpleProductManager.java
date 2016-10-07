@@ -21,6 +21,14 @@ public class SimpleProductManager implements ProductManager {
         products.add(product);
     }
 
+    public void removeProductById(Integer id) {
+        for (Product p: products){
+            if(p.getId().equals(id)){
+                products.remove(p);
+            }
+        }
+    }
+
     public void increasePrice(int percentage) {
     	if (products != null) {
             for (Product product : products) {
