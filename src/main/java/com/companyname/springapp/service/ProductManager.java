@@ -14,4 +14,6 @@ public interface ProductManager extends Serializable {
     void addProduct(Product product);
 
     void removeProductById(Integer id);
+
+    Product getProductByID(Integer id);
 }

@@ -10,7 +10,9 @@
     <h3>Products</h3>
     <c:forEach items="${model.products}" var="prod">
       <c:out value="${prod.description}"/> <i>$<c:out value="${prod.price}"/></i>
-      <a href="/delete-<c:out value="${prod.id}"/>.htm">Borrar</a><br/>
+      <a href="/delete-<c:out value="${prod.id}"/>.htm">Borrar</a>
+      <a href="/show-<c:out value="${prod.id}"/>.htm">Mostrar</a>
+      <br/>
     </c:forEach>
     <br>
     <a href="<c:url value="priceincrease.htm"/>">Increase Prices</a>

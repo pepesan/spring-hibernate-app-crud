@@ -47,5 +47,10 @@ public class JPAProductDao implements ProductDao {
         Product p= (Product) em.createQuery("select p from Product p where p.id="+id).getSingleResult();
         em.remove(p);
     }
+    @Transactional(readOnly = true)
+    public Product getProductByID(Integer id) {
+        Product p= (Product) em.createQuery("select p from Product p where p.id="+id).getSingleResult();
+        return p;
+    }
 
 }

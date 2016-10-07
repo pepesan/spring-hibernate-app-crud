@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.companyname.springapp.domain.Product;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +47,16 @@ public class InventoryController {
         productManager.removeProductById(id);
         return new ModelAndView("redirect:/listado.htm");
     }
+    @RequestMapping(value="show-{id}.htm")
+    public ModelAndView muestraProducto(
+            @PathVariable("id") Integer id){
+        //productManager.removeProductById(id);
 
+        //coger el objeto con ese ID
+        Product product=productManager.getProductByID(id);
+        //pasar el objeto del producto a la vista
+        return new ModelAndView("mostrar","product",product);
+    }
 
     public void setProductManager(ProductManager productManager) {
         this.productManager = productManager;
