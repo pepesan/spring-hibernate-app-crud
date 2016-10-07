@@ -38,6 +38,16 @@ public class SimpleProductManager implements ProductManager {
         return null;
     }
 
+    public void editProduct(Product product) {
+        int i=0;
+        for (Product p: products){
+            if(p.getId().equals(product.getId())){
+                products.set(i,product);
+            }
+            i++;
+        }
+    }
+
     public void increasePrice(int percentage) {
     	if (products != null) {
             for (Product product : products) {

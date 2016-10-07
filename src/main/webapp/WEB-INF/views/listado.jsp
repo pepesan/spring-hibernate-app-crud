@@ -12,6 +12,7 @@
       <c:out value="${prod.description}"/> <i>$<c:out value="${prod.price}"/></i>
       <a href="/delete-<c:out value="${prod.id}"/>.htm">Borrar</a>
       <a href="/show-<c:out value="${prod.id}"/>.htm">Mostrar</a>
+      <a href="/edit-<c:out value="${prod.id}"/>.htm">Edit</a>
       <br/>
     </c:forEach>
     <br>
